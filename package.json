@@ -9,5 +9,15 @@
   },
   "dependencies": {
     "express": "^4.17.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Srinu2k01/beingzero-web-learn.git"
+  },
+  "author": "srinivas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Srinu2k01/beingzero-web-learn/issues"
+  },
+  "homepage": "https://github.com/Srinu2k01/beingzero-web-learn#readme"
 }
