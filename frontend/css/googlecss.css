@@ -9,13 +9,13 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding: 75px 80px;
-    width: 50%;
+    height: 2%;
+    width: 40%;
 }
 .gb_We{
     display: block;
-    
     padding: 0px 1220px;
+    height: 2%;
     width: 2%;
 white-space: nowrap;
 -webkit-user-select: none;
@@ -44,4 +44,34 @@ opacity: 1;
     line-height: 24px;
     position: relative;
     width: 24px;
+}
+#voiceSearchButton {
+    background: url(chrome://new-tab-page/icons/googlemic_clr_24px.svg) no-repeat center;
+    background-size: 21px 21px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    height: 100%;
+    outline: none;
+    padding: 0;
+    pointer-events: auto;
+    position: absolute;
+    right: 16px;
+    width: 26px;
+}
+.tfB0Bf input[type="submit"], .gbqfba {
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 20px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
 }
