@@ -1,5 +1,8 @@
-h1 {
+.cls_003 {
     color: brown;
-    font-size: large;
-    font-style: italic;
+    background-color: gold;
+}
+.cls_004{
+    color: red;
+    background-color:blue;
 }
