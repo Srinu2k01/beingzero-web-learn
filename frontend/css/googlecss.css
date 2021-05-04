@@ -1,0 +1,47 @@
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 60px 65px;
+    width: 20%;
+}
+.sbox{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 75px 80px;
+    width: 50%;
+}
+.gb_We{
+    display: block;
+    
+    padding: 0px 1220px;
+    width: 2%;
+white-space: nowrap;
+-webkit-user-select: none;
+cursor: pointer;
+fill: currentColor;
+color: #685f5f;
+opacity: 1;
+}
+.gicon{
+    display:inline-block;
+    shape-outside: circle();
+    padding: 0px 1280px;
+    width: 4%;
+}
+.QCzoEc {
+    margin-top: 3px;
+    color: #9aa0a6;
+    height: 20px;
+    width: 20px;
+    padding: auto;
+}
+.z1asCe {
+    display: inline-block;
+    fill: currentColor;
+    height: 24px;
+    line-height: 24px;
+    position: relative;
+    width: 24px;
+}
