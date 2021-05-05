@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Page</title>
+    <link rel="stylesheet" href="/css/color.css">
+</head>
+<body>
+   <div
+     class="rgbresulttext" id="colorset" style="font-size: 120%; font-weight: bold;">rgb(255, 99, 71)
+</div>
+    <br><br><br>
+    <div class="slidecontainer">
+       <div><p >RED</p>
+        <input type="range" min="0" max="255" value="255" class="slider1" id="myRange1" oninput="change()">
+        <p id="value1">255</p>
+    </div>
+    <div
+        <p ">GREEN</p>
+        
+        <input type="range" min="0" max="255" value="255" class="slider2" id="myRange2" oninput="change()">
+        <p id="value2">255</p>
+    </div>
+    <div
+         <p >BLUE</p>
+        <input type="range" min="0" max="255" value="255" class="slider3" id="myRange3" oninput="change()">
+          
+          <p id="value3">255</p>
+        </div>      
+        
+      </div>
+      <script src="/javascript/color.js"></script>
+</body>
+</html>
