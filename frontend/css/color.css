@@ -19,6 +19,7 @@ margin-inline-end: 400px;
 }
 .slidecontainer{
     width: 100%;
+    motion-rotation: 90deg;
 }
 .slider1{
     -webkit-appearance: none;  /* Override default CSS styles */
