@@ -10,7 +10,7 @@ $(document).ready(function(){
             console.log("call came here")
             $.ajax( {
                 type:'POST',
-                url:`http://${window.location.host}/crud/post`,
+                url:`https://${window.location.host}/crud/post`,
                 data:{coursename:$("#test-name").val(),Articles:$("#test-result").val()},
                 success:function(datax){
                     console.log(datax);
@@ -37,7 +37,7 @@ $(document).ready(function(){
     $("#getcourse").on('click',function(){
         $.ajax( {
             type:'GET',
-            url:`http://${window.location.host}/crud/get`,
+            url:`https://${window.location.host}/crud/get`,
             data:{coursename:$("#test-name").val(),Articles:$("#test-result").val()},
             success:function(datax){
                 console.log(datax);
