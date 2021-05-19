@@ -1,6 +1,6 @@
 const coursemodel=require('mongoose');
 
-var userSchema= new coursemodel.Schema({
+const userSchema= new coursemodel.Schema({
     //id:{type:Number,unique:true},
     coursename:String,
     Articles:Number,

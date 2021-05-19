@@ -1,16 +1,16 @@
-const coursemodel= require('../models/coursemodel.js');
+const coursemodel=  require('../models/coursemodel');
 
 
 module.exports.getallcourses=function(req,res)
 {
-    var course= coursemodel.find()
+    var course= coursemodel.find
         res.json(course);
 }
 
-
+coursemodel.
 module.exports.createcourse=function(req,res)
 {
-      var course= coursemodel.create(req.body);
+      var course= coursemodel.create(req.body)
       res.json(course);
 }
 

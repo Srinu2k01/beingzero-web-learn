@@ -1,31 +1,19 @@
 $(document).ready(function(){
-    var newId = 4
-    var newTest = { 'name': null, 'id': newId, 'Articles': null }
-
-    $('#add-test').on('click', function () {
-        $('.form-wrapper').removeClass('hidden')
-    })
-
-    $('#test-result').on('keyup', function () {
-        newTest.Articles = $(this).val()
-        //console.log(newTest)
-
-    })
-
-    $('#test-name').on('change', function () {
-        newTest.name = $(this).val()
-        //console.log(newTest)
-    })
-
+    var id=1
     $('#create-test').on('click', function () {
-        if (newTest.name == null) {
+        var Data={course:$("#test-name").val(),Articles:$("#test-result").val(),id:id};
+        if (Data.course == null) {
             alert('No test selected!')
-        } else {
-            addRow(newTest)
+        } 
+        else {
+            
+            addRow(Data)
+            id++
             $.ajax({
+
                 type:'POST',
                 url:'http://localhost:3000/crud/post',
-                data:newTest,
+                data:Data,
                 
                 success:function(datax){
                     console.log(datax);
@@ -40,20 +28,39 @@ $(document).ready(function(){
                 //         </div>`
                 // $('#space').append(x);
         
-                }})
-                
+                }
+            })
             $('#test-name').val('')
             $('#test-result').val('')
             $('.form-wrapper').addClass('hidden')
         }
     })
+    // var newId = 4
+    // var newTest = { 'name': null, 'id': newId, 'Articles': null }
 
-    var tests = []
+    $('#add-test').on('click', function () {
+        $('.form-wrapper').removeClass('hidden')
+    })
+
+    // $('#test-result').on('keyup', function () {
+    //     newTest.Articles = $(this).val()
+    //     //console.log(newTest)
+
+    // })
+
+    // $('#test-name').on('change', function () {
+    //     newTest.name = $(this).val()
+    //     //console.log(newTest)
+    // })
+
+    
+
+    //var tests = []
 
 
     function addRow(obj) {
         var row = `<tr scope="row" class="test-row-${obj.id}">
-                       <td>${obj.name}</td>
+                       <td>${obj.course}</td>
                        <td id="result-${obj.id}" data-testid="${obj.id}"">${obj.Articles}</td>
                        <td>
                          <button class="btn btn-sm btn-danger" data-testid=${obj.id} id="delete-${obj.id}">Delete</button>
