@@ -7,14 +7,14 @@ $(document).ready(function(){
     })
 
     $('#test-result').on('keyup', function () {
-        newTest.Articels = $(this).val()
-        console.log(newTest)
+        newTest.Articles = $(this).val()
+        //console.log(newTest)
 
     })
 
     $('#test-name').on('change', function () {
         newTest.name = $(this).val()
-        console.log(newTest)
+        //console.log(newTest)
     })
 
     $('#create-test').on('click', function () {
@@ -22,21 +22,34 @@ $(document).ready(function(){
             alert('No test selected!')
         } else {
             addRow(newTest)
+            $.ajax({
+                type:'POST',
+                url:'http://localhost:3000/crud/post',
+                data:newTest,
+                
+                success:function(datax){
+                    console.log(datax);
+                    var idx=datax["_id"];
+                    console.log(idx);
+        
+                // var x=`<div id="row${idx}">
+                //         <div id ="text${datax["_id"]} class="text">
+                //         ${task.value}
+                //         </div>
+                //         <button   id="${datax["_id"]}" onclick=del(this)>delete</button>
+                //         </div>`
+                // $('#space').append(x);
+        
+                }})
+                
             $('#test-name').val('')
             $('#test-result').val('')
             $('.form-wrapper').addClass('hidden')
         }
     })
 
-    var tests = [
-        { 'name': 'Javascript', 'id': '1', 'Articles': "43" },
-        { 'name': 'HTML', 'id': '2', 'Articles': "1" },
-        { 'name': 'CSS', 'id': '3', 'Articles': "24" },
-    ]
+    var tests = []
 
-    for (var i in tests) {
-        addRow(tests[i])
-    }
 
     function addRow(obj) {
         var row = `<tr scope="row" class="test-row-${obj.id}">
@@ -51,6 +64,7 @@ $(document).ready(function(){
 
                        </td>
                    </tr>`
+                   
         $('#tests-table').append(row)
 
         $(`#delete-${obj.id}`).on('click', deleteTest)

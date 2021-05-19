@@ -9,4 +9,4 @@ var userSchema= new coursemodel.Schema({
 
 coursemodel.model('coursetable',userSchema);
 
-module.exports=coursemodel;
+module.exports.coursemodel;

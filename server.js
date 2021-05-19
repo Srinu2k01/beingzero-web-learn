@@ -1,8 +1,19 @@
 const express = require('express');
 const app = express();
 const dbconnect=require('./backend/db/dbconnect.js');
-const courselib=require('./backend/lib/courselib.js');
 dbconnect.conn();
+const courselib=require('./backend/lib/courselib.js');
+
+app.post('/crud/post',courselib.createcourse)
+app.get('/crud/get', courselib.getallcourses)
+
+
+
+
+
+
+
+
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
  var todos= [];
