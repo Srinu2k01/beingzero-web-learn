@@ -1,12 +1,11 @@
-const coursemodel=require('mongoose');
+const mongoose=require('mongoose');
 
-const userSchema= new coursemodel.Schema({
+const userSchema= new mongoose.Schema({
     //id:{type:Number,unique:true},
     coursename:String,
     Articles:Number,
-    isDeleted:Boolean
+    //isDeleted:Boolean
 });
 
-coursemodel.model('coursetable',userSchema);
 
-module.exports.coursemodel;
+module.exports=mongoose.model('coursetable',userSchema);

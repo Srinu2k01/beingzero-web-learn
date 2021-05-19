@@ -1,20 +1,17 @@
 $(document).ready(function(){
-    var id=1
+    var newid=1
     $('#create-test').on('click', function () {
-        var Data={course:$("#test-name").val(),Articles:$("#test-result").val(),id:id};
+        var Data={course:$("#test-name").val(),Articles:$("#test-result").val()}
         if (Data.course == null) {
             alert('No test selected!')
         } 
         else {
-            
-            addRow(Data)
-            id++
-            $.ajax({
-
+            addRow(Data);
+            console.log("call came here")
+            $.ajax( {
                 type:'POST',
-                url:'http://localhost:3000/crud/post',
-                data:Data,
-                
+                url:`http://${window.location.host}/crud/post`,
+                data:{coursename:$("#test-name").val(),Articles:$("#test-result").val()},
                 success:function(datax){
                     console.log(datax);
                     var idx=datax["_id"];
@@ -29,19 +26,46 @@ $(document).ready(function(){
                 // $('#space').append(x);
         
                 }
-            })
+            }
+            )
             $('#test-name').val('')
             $('#test-result').val('')
             $('.form-wrapper').addClass('hidden')
-        }
+             }
+        })
+    
+    $("#getcourse").on('click',function(){
+        $.ajax( {
+            type:'GET',
+            url:`http://${window.location.host}/crud/get`,
+            data:{coursename:$("#test-name").val(),Articles:$("#test-result").val()},
+            success:function(datax){
+                console.log(datax);
+                for(var i=0;i<datax.length;i++)
+                {
+                    var id=datax[i]._id;
+                       id.toString()
+        
+                    var x=`<div id="row${datax[i]._id}">
+                        <div id ="text${datax[i]._id} class="text">
+                        ${datax[i].coursename}
+                        </div>
+                        <button  id="${datax[i]._id}"  onclick=del(this)>delete</button>
+                        </div>`
+                        $('#space').append(x);
+                }
+                //var idx=datax["_id"];
+                //console.log(idx);
+            }
+        })
     })
-    // var newId = 4
-    // var newTest = { 'name': null, 'id': newId, 'Articles': null }
-
+                
     $('#add-test').on('click', function () {
         $('.form-wrapper').removeClass('hidden')
     })
 
+                // var newId = 4
+                // var newTest = { 'name': null, 'id': newId, 'Articles': null }
     // $('#test-result').on('keyup', function () {
     //     newTest.Articles = $(this).val()
     //     //console.log(newTest)

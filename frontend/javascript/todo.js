@@ -4,7 +4,7 @@ $(document).ready(function(){
     var Data={To_do : $("#to-do").val(),
              id:$("#id").val()};
     $.ajax( {
-     url: `http://${window.location.host}/api/todos`,
+       url: `http://${window.location.host}/api/todos`,
        type: 'POST',
        data:{To_do : $("#to-do").val(),
              id:$("#id").val()},
@@ -24,10 +24,11 @@ $(document).ready(function(){
     $.ajax( {
        url: `http://${window.location.host}/api/get`,
        type: 'GET',
-       success: function (req,res,result )
-      {
+       success: function (result )
+      {  result=JSON.stringify(result);
+        $("#res").html(result);
        // result = JSON.parse( result );
-         res.json(result);
+         //res.json(result);
     },
     error: function ( error )
     {

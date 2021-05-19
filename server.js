@@ -1,21 +1,17 @@
 const express = require('express');
 const app = express();
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 const dbconnect=require('./backend/db/dbconnect.js');
 dbconnect.conn();
 const courselib=require('./backend/lib/courselib.js');
 
 app.post('/crud/post',courselib.createcourse)
-//app.get('/crud/get', courselib.getallcourses)
+app.get('/crud/get', courselib.getallcourses)
 
 
 
 
-
-
-
-
-app.use(express.urlencoded({extended: true}));
-app.use(express.json());
  var todos= [];
 app.use(express.static(__dirname+"/frontend"));
 app.get("/", function(req, res){

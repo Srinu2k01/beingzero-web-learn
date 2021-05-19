@@ -1,17 +1,32 @@
-const coursemodel=  require('../models/coursemodel');
+const coursemodel= require('../models/coursemodel');
+//const mongoose=require('mongoose');
 
 
-module.exports.getallcourses=function(req,res)
+
+module.exports.createcourse=async(req,res)=>
 {
-    var course= coursemodel.find
-        res.json(course);
-}
-
-coursemodel.
-module.exports.createcourse=function(req,res)
-{
-      var course= coursemodel.create(req.body)
+     try
+     {  var object=req.body;
+        var course=await coursemodel.create(object);
+        console.log(req.body);
+        console.log(course);
       res.json(course);
+     }
+     catch (error) {
+        console.error(error);
+      }  
+    }
+
+module.exports.getallcourses=async(req,res)=>
+{
+    try
+    {   var course=await coursemodel.find();
+        console.log(course);    
+        res.json(course);
+    }
+    catch (error) {
+        console.error(error);
+      }  
 }
 
 
