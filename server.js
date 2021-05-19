@@ -1,6 +1,8 @@
 const express = require('express');
-
 const app = express();
+const dbconnect=require('./backend/db/dbconnect.js');
+const courselib=require('./backend/lib/courselib.js');
+dbconnect.conn();
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
  var todos= [];
@@ -47,6 +49,10 @@ app.get("/register", function(req, res){
 })
 app.get("/todoapp", function(req, res){
     let filepath=__dirname+"/frontend/html/todo.html";
+    res.sendFile(filepath);
+})
+app.get("/crud", function(req, res){
+    let filepath=__dirname+"/frontend/html/crud.html";
     res.sendFile(filepath);
 })
 // Heroku will automatically set an environment variable called PORT

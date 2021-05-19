@@ -24,11 +24,10 @@ $(document).ready(function(){
     $.ajax( {
        url: `http://${window.location.host}/api/get`,
        type: 'GET',
-       success: function ( result )
+       success: function (req,res,result )
       {
        // result = JSON.parse( result );
-        
-          console.log(result);
+         res.json(result);
     },
     error: function ( error )
     {
