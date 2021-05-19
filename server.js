@@ -8,7 +8,7 @@ const courselib=require('./backend/lib/courselib.js');
 
 app.post('/crud/post',courselib.createcourse)
 app.get('/crud/get', courselib.getallcourses)
-
+app.delete('/crud/delete', courselib.deleteallcourses)
 
 
 

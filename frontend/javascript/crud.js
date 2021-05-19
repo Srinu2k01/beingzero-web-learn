@@ -38,7 +38,7 @@ $(document).ready(function(){
         $.ajax( {
             type:'GET',
             url:`https://${window.location.host}/crud/get`,
-            data:{coursename:$("#test-name").val(),Articles:$("#test-result").val()},
+            //data:{coursename:$("#test-name").val(),Articles:$("#test-result").val()},
             success:function(datax){
                 console.log(datax);
                 for(var i=0;i<datax.length;i++)
@@ -59,7 +59,22 @@ $(document).ready(function(){
             }
         })
     })
+     
+    $("#deletecourse").on('click',function(){
+        $("#test-table").remove()
+        $.ajax( {
+            type:'delete',
+            url:`https://${window.location.host}/crud/delete`,
+            //data:{coursename:$("#test-name").val(),Articles:$("#test-result").val()},
+            success:function(datax){
+                console.log("deleted");
                 
+                //var idx=datax["_id"];
+                //console.log(idx);
+            }
+        })
+    })
+
     $('#add-test').on('click', function () {
         $('.form-wrapper').removeClass('hidden')
     })

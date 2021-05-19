@@ -29,6 +29,17 @@ module.exports.getallcourses=async(req,res)=>
       }  
 }
 
+module.exports.deleteallcourses=async(req,res)=>
+{
+    try
+    {   var course=await coursemodel.deleteMany();
+        console.log(course);    
+        res.json(course);
+    }
+    catch (error) {
+        console.error(error);
+      }  
+}
 
 
 // module.exports.createcourse=function(courseobj,callback){
