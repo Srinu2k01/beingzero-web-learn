@@ -7,20 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 style="margin-left: 500px;">Welcome to register</h1>
-    <form style="margin-left: 500px;" id="registerform">
-        <label for="name">Name</label>
+    <h1 style="margin-left: 500px;">Registration</h1>
+    <form style="margin-left: 500px;" id="registerform" action="/api/createuser">
+        <label for="name">User Name</label>
         <input type="text" id="name" name="name" ><br><br>
-        <label for="mobilenumber">Mobile number</label>
-        <input type="number" id="mobilenumber" name="mobilenumber" ><br><br>
-        <label>Gender</label><br>
-        <input type="radio" id="male" name="gender" value="male">
-        <label for="male">Male</label><br>
-        <input type="radio" id="female" name="gender" value="female">
-        <label for="female">Female</label><br>
-        <input type="radio" id="other" name="gender" value="other">
-        <label for="other">Other</label><br><br>
-        <input type="submit"  form="registerform" id="registerbutton" >
+        <label for="Password">Password</label>
+        <input type="text" id="Password" name="Password" ><br><br>
+        
+        <input type="submit" value="Register" form="registerform" id="registerbutton" >
         
 </body>
 </html>
